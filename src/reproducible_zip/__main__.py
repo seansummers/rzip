@@ -52,7 +52,7 @@ def main(args=None):
     elif args.create is not None:
         zip_name = args.create.pop(0)
         base_dir = args.create[0]
-        shutil.make_archive(zip_name, "rzip", base_dir=base_dir)
+        shutil.make_archive(zip_name, "reproducible_zip", base_dir=base_dir)
 
 
 if __name__ == "__main__":

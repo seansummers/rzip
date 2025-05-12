@@ -5,7 +5,7 @@ A tool to generate consistent zip files.
 ## Installation
 
 ```sh
-pip install rzip
+pip install reproducible_zip
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ pip install rzip
 The module uses the same interface as the python builtin `zipfile` module:
 
 ```sh
-python -m rzip
+python -m reproducible_zip
 ```
 
 ## How does it work?

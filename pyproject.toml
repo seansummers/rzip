@@ -1,5 +1,5 @@
 [project]
-name = "rzip"
+name = "reproducible_zip"
 version = "0.1.0"
 description = "Reproducible ZipFile (supports shutil.archive)"
 readme = "README.md"
@@ -10,7 +10,7 @@ requires-python = ">=3.7"
 dependencies = []
 
 [project.scripts]
-rzip = "rzip:main"
+reproducible_zip = "reproducible_zip:main"
 
 [build-system]
 requires = ["hatchling"]

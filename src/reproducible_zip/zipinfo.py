@@ -6,7 +6,7 @@ from stat import *
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 
-class RZipInfo(ZipInfo):
+class ReproducibleZipInfo(ZipInfo):
     """Class with readonly attributes for deterministic/repeatable ZIP archive."""
 
     # properties that must be reproducible
@@ -58,11 +58,11 @@ def add_folder_to_zip(
         filename = str(path)
         if path.is_dir():
             filename += "/"
-        info = RZipInfo(filename=filename)
+        info = ReproducibleZipInfo(filename=filename)
         zf.writestr(info, path.resolve().read_bytes() if not path.is_dir() else "")
 
 
-def _make_rzipfile(
+def _make_reproducible_zipfile(
     base_name: str,
     base_dir: str,
     verbose: int = 0,
@@ -85,5 +85,7 @@ def _make_rzipfile(
     return str(zip_filename)
 
 
-_make_rzipfile.supports_root_dir = True
-shutil.register_archive_format("rzip", _make_rzipfile, [], "Reproducible ZIP file")
+_make_reproducible_zipfile.supports_root_dir = True
+shutil.register_archive_format(
+    "reproducible_zip", _make_reproducible_zipfile, [], "Reproducible ZIP file"
+)
