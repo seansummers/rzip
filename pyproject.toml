@@ -1,6 +1,6 @@
 [project]
 name = "reproducible_zip"
-version = "0.1.0"
+version = "0.3.0"
 description = "Reproducible ZipFile (supports shutil.archive)"
 readme = "README.md"
 authors = [
